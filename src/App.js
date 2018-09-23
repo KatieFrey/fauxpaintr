@@ -24,9 +24,7 @@ class App extends Component {
             <UploadPic />
           </div>
         </section>
-        <footer>
-          <Footer />
-        </footer>
+        <footer>{/* <Footer /> */}</footer>
       </div>
     );
   }

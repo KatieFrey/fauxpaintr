@@ -8,6 +8,7 @@ h1 {
   height: 30em;
   width: 20em;
   background-color: lightgrey;
+  box-shadow: 5px 10px 8px #888888;
 }
 
 .select-bar {

@@ -1,5 +1,3 @@
-const db = require("./indexModel");
-
 const Picture = require("./pictureModel");
 const Upload = require("./uploadModel");
 const ResultPic = require("./resultPicModel");

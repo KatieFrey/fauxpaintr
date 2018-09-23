@@ -2,18 +2,27 @@
   margin-top: 4em;
   height: 92vh;
   background-image: url("./art-creative-creativity-20967.jpg");
-  filter: blur(2px);
   background-size: cover;
+  /*animation: blurEffect 2s linear 2s;
+  -webkit-animation: blurEffect 2s linear 2s;
+  */
+  transition: all 2s linear;
+}
+
+.main:hover {
+  filter: blur(2px);
   -webkit-filter: blur(2px);
 }
 
-.p-parent {
+/* .p-parent {
   transition-delay: 3s;
-}
+} */
 
 .p-parent p {
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  background-color: rgb(0, 0, 0);
+  /*Fallbackcolor*/
+  background-color: rgba(0, 0, 0, 0.4);
+  /*Blackw/opacity/see-through*/
   word-spacing: 0.5em;
   font-size: 2.5em;
   color: white;
@@ -26,4 +35,28 @@
   z-index: 2;
   width: 42%;
   padding: 20px;
+  animation: slideDown 5s ease-in-out 1;
+  -webkit-animation: slideDown 5s ease-in-out 1;
+}
+
+@keyframes blurEffect {
+  to {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -250%);
+    -webkit-transform: translate(-50%, -250%);
+    -moz-transform: translate(-50%, -250%);
+    -ms-transform: translate(-50%, -250%);
+    -o-transform: translate(-50%, -250%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
