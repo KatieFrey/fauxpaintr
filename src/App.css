@@ -36,3 +36,8 @@
   justify-content: space-around;
   margin: 5em 0;
 }
+
+#output img {
+  height: 500px;
+  width: 600px;
+}

@@ -1,47 +1,52 @@
 import React from "react";
-import S3FileUpload from "react-s3";
-
-//Optional Import
-//import { uploadFile } from "react-s3";
-
-const config = {
-  bucketName: "fauxpaintr",
-  dirName: "photos" /* optional */,
-  region: "us-east-1",
-  accessKeyId: "AKIAJBBNFLAAUUT3XDAQ",
-  secretAccessKey: "gceWye1AdcDm1YqviKC/F1i14d1Wc3Og0Mwg6ArD"
-};
-
-/*  Notice that if you don't provide a dirName, the file will be automatically uploaded to the root of your bucket */
-
-// S3FileUpload.uploadFile(file, config)
-//   .then(data => console.log(data))
-//   .catch(err => console.error(err));
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import Button from "@material-ui/core/Button";
 
 class UploadPic extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      picture: ""
-    };
-    this.upload = this.upload.bind(this);
+  constructor(props) {
+    super(props);
   }
 
-  upload(event) {
-    console.log(event.target.files[0]);
-    S3FileUpload.uploadFile(event.target.files[0], config)
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
   render() {
     return (
       <div className="card">
-        <h1>Upload a picture</h1>
-        <input type="file" onChange={this.upload} />
+        <h1>Choose a picture</h1>
+        <div>
+          <br />
+          <br />
+          {this.props.contentPic ? (
+            <img
+              src={`./images/${this.props.contentPic}.jpg`}
+              alt="content one"
+              id="inputImg"
+            />
+          ) : (
+            <div>
+              <h1>"What picture would you like to style?"</h1>
+            </div>
+          )}
+        </div>
+        <form onSubmit={this.props.handleSubmit}>
+          <FormControl>
+            <Select
+              className="select-bar"
+              value={this.props.contentPic}
+              name="contentPic"
+              onChange={this.props.handleChange}
+            >
+              <MenuItem value={"habibi"}>Habibi</MenuItem>
+              <MenuItem value={"patagonia"}>Patagonia</MenuItem>
+              <MenuItem value={"monalisa"}>Mona Lisa</MenuItem>
+              <MenuItem value={"corgi"}>Corgi</MenuItem>
+              <MenuItem value={"corgi_2"}>Corgi 2</MenuItem>
+              <MenuItem value={"girlwithpearl"}>Girl With Pearl</MenuItem>
+              <MenuItem value={"lower_manhattan"}>Lower Manhattan</MenuItem>
+              <MenuItem value={"silly_cat"}>Silly Cat</MenuItem>
+            </Select>
+          </FormControl>
+        </form>
       </div>
     );
   }
