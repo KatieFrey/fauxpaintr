@@ -1,4 +1,4 @@
-const router = require("express").Router();
-router.use("/pictures", require("./pictureRoute"));
+// const router = require("express").Router();
+// router.use("/pictures", require("./pictureRoute"));
 
-module.exports = router;
+// module.exports = router;

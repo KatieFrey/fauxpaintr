@@ -38,6 +38,11 @@
 }
 
 #output img {
-  height: 500px;
-  width: 600px;
+  height: 18em;
+  width: 20em;
+  margin: 11em 6em;
+}
+
+footer {
+  margin: 5em 15em 5em;
 }
