@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import StylePic from "./Components/StylePic/StylePic";
-import UploadPic from "./Components/UploadPic/UploadPic";
+import StylePic from "../StylePic/StylePic";
+import UploadPic from "../UploadPic/UploadPic";
 
 class StyleTransfer extends Component {
   constructor(props) {

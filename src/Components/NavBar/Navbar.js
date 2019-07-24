@@ -1,12 +1,15 @@
 import React from "react";
-import "./NavBar.css";
+import cssStyles from "./NavBar.modules.css";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Main from "../Main/Main";
-import { withStyles } from "@material-ui/core/styles";
-import { Link, Route, Router, hashHistory, IndexRoute } from "react-router";
+import Footer from "../Footer/Footer";
+import Gallery from "../Gallery/Gallery";
+import { makeStyles } from "@material-ui/core/styles";
+//import { Route } from "react-router";
+import { Link, Route, HashRouter } from "react-router-dom";
 
-const styles = theme => ({
+const styles = makeStyles(theme => ({
   button: {
     marginTop: theme.spacing.unit * 0.7,
     marginRight: theme.spacing.unit * 5,
@@ -15,61 +18,60 @@ const styles = theme => ({
     // backgroundColor: theme.palette.primary.dark,
     fontSize: 14
   }
-});
+}));
 
-class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    const { classes } = this.props;
-    return (
-      <Router history={hashHistory}>
-        <IndexRoute component={Main} />
+const Navbar = () => {
+  const classes = styles();
+  console.log("classes: ", classes);
+  return (
+    <HashRouter>
+      <div>
+        <Route exact path="/" component={Main} />
         <Route path="/sources" component={Footer} />
         <Route path="/gallery" component={Gallery} />
-        <AppBar>
-          <div className="navbar">
-            <ul className="list-items">
-              <Link to="/">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className={classes.button}
-                  gutterBottom="true"
-                >
-                  Home
-                </Button>
-              </Link>
+      </div>
 
-              <Link to="/gallery">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className={classes.button}
-                >
-                  Past Masterpieces
-                </Button>
-              </Link>
+      <AppBar>
+        <div className={cssStyles.navbar}>
+          <ul className={cssStyles.listItems}>
+            <Link to="/">
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                gutterBottom="true"
+              >
+                Home
+              </Button>
+            </Link>
 
-              <Link to="/sources">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className={classes.button}
-                >
-                  Sources
-                </Button>
-              </Link>
+            <Link to="/gallery">
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+              >
+                Past Masterpieces
+              </Button>
+            </Link>
 
-              {/* <li id="list-item">Home</li>
+            <Link to="/sources">
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+              >
+                Sources
+              </Button>
+            </Link>
+
+            {/* <li id="list-item">Home</li>
             <li id="list-item">Past Masterpieces</li> */}
-            </ul>
-          </div>
-        </AppBar>
-      </Router>
-    );
-  }
-}
+          </ul>
+        </div>
+      </AppBar>
+    </HashRouter>
+  );
+};
 
-export default withStyles(styles)(Navbar);
+export default Navbar;

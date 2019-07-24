@@ -1,11 +1,11 @@
 import React from "react";
-import "./Footer.css";
+import styles from "./Footer.modules.css";
 
 class Footer extends React.Component {
   render() {
     return (
       <div>
-        <footer>
+        <footer className={styles.footer}>
           <h2>
             A Neural Algorithm of Artistic Style [Leon A. Gatys, Alexander S.
             Ecker, Matthias Bethge]

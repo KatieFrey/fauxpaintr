@@ -2,12 +2,12 @@
   height: 5em;
 }
 
-.list-items {
+.listItems {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
-.list-items li {
+.listItems li {
   margin: 0.7em 2em;
   font-weight: 900;
   font-size: 1.2em;
@@ -19,7 +19,7 @@
   -o-transition: all 0.3s;
 }
 
-.list-items li:hover {
+.listItems li:hover {
   background-color: azure;
   color: black;
   border-radius: 10%;

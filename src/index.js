@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 import registerServiceWorker from "./registerServiceWorker";
-import { Provider } from "react-redux";
-import store from "./reducer/store";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 const theme = createMuiTheme({
   palette: {
@@ -22,11 +22,13 @@ const theme = createMuiTheme({
 });
 
 ReactDOM.render(
-  <Provider store={store}>
-    <MuiThemeProvider theme={theme}>
-      <App />
-    </MuiThemeProvider>
-  </Provider>,
+  <ThemeProvider theme={theme}>
+    <HashRouter>
+      <Switch>
+        <Route exact path="/" component={App} />
+      </Switch>
+    </HashRouter>
+  </ThemeProvider>,
   document.getElementById("root")
 );
 registerServiceWorker();
