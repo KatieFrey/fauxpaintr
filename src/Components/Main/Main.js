@@ -1,11 +1,10 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import StyleTransfer from "../StyleTransfer/StyleTransfer";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import cssStyles from "./Main.modules.css";
 //import { Route, Router } from "react-router";
-import { Link, Route, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const styles = makeStyles(theme => ({
   button: {
@@ -20,10 +19,7 @@ const Main = () => {
   const classes = styles();
 
   return (
-    <Router>
-      <div>
-        <Route path="/themagic" component={StyleTransfer} />
-      </div>
+    <div>
       <div>
         <div className={cssStyles.main} />
         <div className={cssStyles.pparent}>
@@ -42,7 +38,7 @@ const Main = () => {
           </p>
         </div>
       </div>
-    </Router>
+    </div>
   );
 };
 
