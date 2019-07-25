@@ -3,7 +3,6 @@ import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import cssStyles from "./Main.modules.css";
-//import { Route, Router } from "react-router";
 import { Link } from "react-router-dom";
 
 const styles = makeStyles(theme => ({
@@ -19,24 +18,21 @@ const Main = () => {
   const classes = styles();
 
   return (
-    <div>
-      <div>
-        <div className={cssStyles.main} />
-        <div className={cssStyles.pparent}>
-          <p>
-            Wish you could paint like that? Well now you can! Sorta . . .{" "}
-            <Link to="/themagic">
-              <Button
-                variant="contained"
-                className={classes.button}
-                size="large"
-                fullWidth
-              >
-                Try Us Out
-              </Button>
-            </Link>
-          </p>
-        </div>
+    <div className={cssStyles.main}>
+      <div className={cssStyles.pparent}>
+        <p>
+          Wish you could paint like that? Well now you can! Sorta . . .{" "}
+          <Link to="/themagic">
+            <Button
+              variant="contained"
+              className={classes.button}
+              size="large"
+              fullWidth
+            >
+              Try Us Out
+            </Button>
+          </Link>
+        </p>
       </div>
     </div>
   );

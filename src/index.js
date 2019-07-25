@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Main from "./Components/Main/Main";
 import StyleTransfer from "./Components/StyleTransfer/StyleTransfer";
 import Footer from "./Components/Footer/Footer";
 import Gallery from "./Components/Gallery/Gallery";
@@ -29,7 +28,6 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
     <Router>
       <Switch>
-        <Route exact path="/" component={Main} />
         <Route exact path="/" component={App} />
         <Route path="/sources" component={Footer} />
         <Route path="/gallery" component={Gallery} />
