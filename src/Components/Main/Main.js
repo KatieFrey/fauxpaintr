@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import cssStyles from "./Main.modules.css";
+import cssStyles from "./Main.module.css";
 import { Link } from "react-router-dom";
 
 const styles = makeStyles(theme => ({
