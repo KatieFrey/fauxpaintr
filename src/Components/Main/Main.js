@@ -4,13 +4,18 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import cssStyles from "./Main.module.css";
 import { Link } from "react-router-dom";
+import { Typography } from "@material-ui/core";
 
 const styles = makeStyles(theme => ({
   button: {
     marginTop: theme.spacing.unit * 2,
-    background: "linear-gradient(45deg, #b71c1c 30%, #5d4037 90%)",
+    backgroundColor: theme.palette.primary.backgroundColor,
+    //background: "linear-gradient(45deg, #b71c1c 30%, #5d4037 90%)",
     fontSize: 16,
     fontWeight: "bolder"
+  },
+  text: {
+    color: theme.palette.secondary.main
   }
 }));
 
@@ -22,14 +27,16 @@ const Main = () => {
       <div className={cssStyles.pparent}>
         <p>
           Wish you could paint like that? Well now you can! Sorta . . .{" "}
-          <Link to="/themagic">
+          <Link to="/themagic" style={{ textDecoration: "none" }}>
             <Button
               variant="contained"
               className={classes.button}
               size="large"
               fullWidth
             >
-              Try Us Out
+              <Typography className={classes.text} variant="h6" component="h6">
+                Try Us Out
+              </Typography>
             </Button>
           </Link>
         </p>
