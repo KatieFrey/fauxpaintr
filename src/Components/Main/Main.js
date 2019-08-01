@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import cssStyles from "./Main.module.css";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Typography, Card } from "@material-ui/core";
 
 const styles = makeStyles(theme => ({
   button: {
@@ -16,6 +16,9 @@ const styles = makeStyles(theme => ({
   },
   text: {
     color: theme.palette.secondary.main
+  },
+  mainCard: {
+    backgroundColor: "#000000"
   }
 }));
 
@@ -24,8 +27,8 @@ const Main = () => {
 
   return (
     <div className={cssStyles.main}>
-      <div className={cssStyles.pparent}>
-        <p>
+      <div>
+        <Card className={cssStyles.mainCard}>
           Wish you could paint like that? Well now you can! Sorta . . .{" "}
           <Link to="/themagic" style={{ textDecoration: "none" }}>
             <Button
@@ -39,7 +42,7 @@ const Main = () => {
               </Typography>
             </Button>
           </Link>
-        </p>
+        </Card>
       </div>
     </div>
   );
